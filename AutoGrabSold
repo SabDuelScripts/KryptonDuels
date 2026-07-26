@@ -1,1 +1,57 @@
+-- Crear ScreenGui
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "NotificationFrame"
+ScreenGui.Parent = game.CoreGui
 
+-- Crear el Frame principal
+local Frame = Instance.new("Frame")
+Frame.Size = UDim2.new(0, 300, 0, 150)
+Frame.Position = UDim2.new(0.5, -150, 0.5, -75)
+Frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Frame.BorderSizePixel = 0
+Frame.Parent = ScreenGui
+
+-- Esquinas redondeadas
+local Corner = Instance.new("UICorner")
+Corner.CornerRadius = UDim.new(0, 10)
+Corner.Parent = Frame
+
+-- Texto principal
+local TextLabel = Instance.new("TextLabel")
+TextLabel.Size = UDim2.new(1, 0, 0.6, 0)
+TextLabel.Position = UDim2.new(0, 0, 0.2, 0)
+TextLabel.BackgroundTransparency = 1
+TextLabel.Text = "Script desactivated"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.Font = Enum.Font.GothamBold
+TextLabel.Parent = Frame
+
+-- Botón de cerrar
+local CloseButton = Instance.new("TextButton")
+CloseButton.Size = UDim2.new(0, 100, 0, 35)
+CloseButton.Position = UDim2.new(0.5, -50, 0.75, 0)
+CloseButton.BackgroundColor3 = Color3.fromRGB(200, 50, 50)
+CloseButton.Text = "Close"
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.Font = Enum.Font.Gotham
+CloseButton.Parent = Frame
+
+local CloseCorner = Instance.new("UICorner")
+CloseCorner.CornerRadius = UDim.new(0, 6)
+CloseCorner.Parent = CloseButton
+
+-- Función para cerrar
+CloseButton.MouseButton1Click:Connect(function()
+    ScreenGui:Destroy()
+end)
+
+-- Efecto de entrada (fade in)
+Frame.BackgroundTransparency = 1
+TextLabel.TextTransparency = 1
+
+for i = 1, 20 do
+    Frame.BackgroundTransparency = 1 - (i * 0.05)
+    TextLabel.TextTransparency = 1 - (i * 0.05)
+    task.wait(0.02)
+end
